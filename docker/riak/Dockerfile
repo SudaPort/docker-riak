@@ -2,7 +2,12 @@ FROM ubuntu:20.04
 
 RUN \
     # Install Java 8
-    apt-get update \
+    sed -i.bak 's/main$/main universe/' /etc/apt/sources.list \
+    && apt-get update -qq && apt-get install -y software-properties-common curl \
+    && apt-add-repository ppa:webupd8team/java -y && apt-get update -qq \
+    && echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections \
+    && apt-get install -y oracle-java8-installer \
+    && apt-get update \
     && apt-get install -y openjdk-8-jdk \
     && apt-get install -y shared-mime-info \
     # Install Riak
