@@ -4,7 +4,8 @@ FROM ubuntu:20.04
     # Install Java 8
     RUN sed -i.bak 's/main$/main universe/' /etc/apt/sources.list 
     RUN apt-get update -qq 
-    RUN apt-get install -y software-properties-common curl 
+    RUN apt-get install -y software-properties-common
+    RUN apt -y install git curl make apt-transport-https ca-certificates gnupg lsb-release 
     RUN apt-add-repository ppa:webupd8team/java -y 
     RUN apt-get update -qq 
     RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections 
