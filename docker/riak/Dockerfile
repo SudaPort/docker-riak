@@ -2,8 +2,8 @@ FROM ubuntu:20.04
 
 RUN \
     # Install Java 8
-    apt update \
-    && apt install openjdk-8-jdk \
+    apt-get update \
+    && apt-get install -y openjdk-8-jdk \
 
     # Install Riak
     && curl -fsSL "https://packagecloud.io/install/repositories/basho/riak/script.deb" > /tmp/riak_setup.sh \
