@@ -10,7 +10,7 @@ RUN \
     && apt-get update \
     && apt-get install -y openjdk-8-jdk \
     && apt-get install -y shared-mime-info \
-    && apt-get install -y apt-utils \
+    && apt-get install dialog apt-utils \
     # Install Riak
     && curl -fsSL "https://packagecloud.io/install/repositories/basho/riak/script.deb" > /tmp/riak_setup.sh \
     && chmod +x /tmp/riak_setup.sh && /tmp/riak_setup.sh \
