@@ -15,8 +15,8 @@ FROM ubuntu:18.04
     RUN apt-get install -y supervisor 
     RUN apt-get install -y riak=2.0.5-1 
     # Cleanup
-    RUN apt-get clean 
-    RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+    # RUN apt-get clean 
+    # RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN locale-gen en_US en_US.UTF-8
 
