@@ -12,7 +12,8 @@ FROM ubuntu:18.04
     RUN curl -fsSL "https://packagecloud.io/install/repositories/basho/riak/script.deb" > /tmp/riak_setup.sh 
     RUN chmod +x /tmp/riak_setup.sh 
     RUN /tmp/riak_setup.sh 
-    RUN apt-get install -y supervisor riak=2.0.5-1 
+    RUN apt-get install -y supervisor 
+    RUN apt-get install -y riak=2.0.5-1 
     # Cleanup
     RUN apt-get clean 
     RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
