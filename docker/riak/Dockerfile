@@ -7,7 +7,7 @@ FROM ubuntu:18.04
     RUN apt-get install -y apt-utils
     RUN apt-get install -y software-properties-common 
     RUN apt-get install -y curl
-    RUN apt-get install openjdk-8-jdk openjdk-8-jre 
+    RUN apt-get install -y openjdk-8-jdk openjdk-8-jre 
     # Install Riak
     RUN curl -fsSL "https://packagecloud.io/install/repositories/basho/riak/script.deb" > /tmp/riak_setup.sh 
     RUN chmod +x /tmp/riak_setup.sh RUN /tmp/riak_setup.sh 
