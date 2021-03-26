@@ -9,7 +9,7 @@ FROM ubuntu:18.04
     RUN apt-get install -y curl
     RUN apt-get install -y openjdk-8-jdk openjdk-8-jre 
     # Install Riak
-    RUN curl https://packagecloud.io/gpg.key | apt-key add –
+    RUN curl https://packagecloud.io/gpg.key | tac | tac | apt-key add –
     RUN apt-get install -y apt-transport-https
     RUN curl "https://packagecloud.io/install/repositories/basho/riak/config_file.list?os=ubuntu&dist=bionic&name=gurosh" > /tmp/riak_setup.sh
     # RUN curl -fsSL "https://packagecloud.io/install/repositories/basho/riak/script.deb" > /tmp/riak_setup.sh 
