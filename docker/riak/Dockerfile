@@ -4,18 +4,12 @@ FROM ubuntu:18.04
     # Install Java 8
     RUN sed -i.bak 's/main$/main universe/' /etc/apt/sources.list 
     RUN apt-get update -qq 
-    RUN apt-get install -y software-properties-common
-    RUN apt -y install git curl make apt-transport-https ca-certificates gnupg lsb-release 
-    RUN apt-add-repository ppa:webupd8team/java -y 
+    RUN apt install software-properties-common 
+    RUN apt install curl
+    RUN add-apt-repository ppa:webupd8team/java -y 
     RUN apt-get update -qq 
     RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections 
-    RUN apt-get install -y oracle-java8-installer 
-    RUN apt-get update 
-    RUN apt-get install -y openjdk-8-jdk 
-    RUN apt-get install -y shared-mime-info 
-    RUN apt-get install dialog
-    RUN apt-get install dialog apt-utils
-    RUN apt-get install -y apt-utils
+    RUN apt install oracle-java8-set-default 
     # Install Riak
     RUN curl -fsSL "https://packagecloud.io/install/repositories/basho/riak/script.deb" > /tmp/riak_setup.sh 
     RUN chmod +x /tmp/riak_setup.sh RUN /tmp/riak_setup.sh 
