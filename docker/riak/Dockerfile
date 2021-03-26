@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
- 
+    RUN apt-get update && apt-get upgrade -y
     # Install Java 8
     RUN sed -i.bak 's/main$/main universe/' /etc/apt/sources.list 
     RUN apt-get update -qq 
