@@ -9,11 +9,15 @@ FROM ubuntu:18.04
     RUN apt-get install -y curl
     RUN apt-get install -y openjdk-8-jdk openjdk-8-jre 
     # Install Riak
-    RUN curl -fsSL "https://packagecloud.io/install/repositories/basho/riak/script.deb" > /tmp/riak_setup.sh 
+    RUN curl https://packagecloud.io/gpg.key | sudo apt-key add –
+    RUN apt-get install -y apt-transport-https
+    RUN curl "https://packagecloud.io/install/repositories/basho/riak/config_file.list?os=ubuntu&dist=bionic&name=gurosh" > /tmp/riak_setup.sh
+    # RUN curl -fsSL "https://packagecloud.io/install/repositories/basho/riak/script.deb" > /tmp/riak_setup.sh 
     RUN chmod +x /tmp/riak_setup.sh 
     RUN /tmp/riak_setup.sh 
     RUN apt-get install -y supervisor 
-    RUN apt-get install -y riak
+    RUN apt-get update
+    RUN apt-get install -y riak 
     # Cleanup
     RUN apt-get clean 
     RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
