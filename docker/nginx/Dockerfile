@@ -4,4 +4,4 @@ COPY ./hosts /etc/nginx/conf.d
 COPY entrypoint.sh /
 COPY ./ssl-cert /etc/nginx/ssl
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["chmod", "+x", "/entrypoint.sh"]
