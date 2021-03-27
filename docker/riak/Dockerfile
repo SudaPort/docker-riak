@@ -28,4 +28,4 @@ COPY ./supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY ./entrypoint.sh /
 COPY ./ssl-cert /etc/riak
 
-CMD ["/entrypoint.sh"]
+CMD ["chmod", "+x", "/entrypoint.sh"]
