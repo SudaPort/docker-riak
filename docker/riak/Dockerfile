@@ -1,4 +1,4 @@
-FROM basho:riak-kv
+FROM basho/riak-kv:latest
 
     # RUN apt-get update && apt-get upgrade -y
     # # Install Java 8
