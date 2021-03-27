@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:16.04
 
     RUN apt-get update && apt-get upgrade -y
     # Install Java 8
@@ -11,7 +11,7 @@ FROM ubuntu:18.04
     # Install Riak
     RUN curl -s https://packagecloud.io/gpg.key | apt-key add -
     RUN apt-get install -y apt-transport-https
-    RUN curl "https://packagecloud.io/install/repositories/basho/riak/config_file.list?os=ubuntu&dist=bionic&name=gurosh" > /etc/apt/sources.list.d/basho.list
+    RUN curl "https://packagecloud.io/install/repositories/basho/riak/config_file.list?os=ubuntu&dist=trusty&name=gurosh" > /etc/apt/sources.list.d/basho.list
     # RUN curl -fsSL "https://packagecloud.io/install/repositories/basho/riak/script.deb" > /tmp/riak_setup.sh 
     # RUN chmod +x /tmp/riak_setup.sh 
     # RUN /tmp/riak_setup.sh 
