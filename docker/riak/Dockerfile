@@ -16,7 +16,7 @@ FROM ubuntu:16.04
     # RUN chmod +x /tmp/riak_setup.sh 
     # RUN /tmp/riak_setup.sh 
     RUN apt-get install -y supervisor 
-    RUN apt-get update
+    RUN apt-get -s update
     RUN apt-get install -y riak 
     # Cleanup
     # RUN apt-get clean 
