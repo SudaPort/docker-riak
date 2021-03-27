@@ -3,8 +3,8 @@ services:
   riak:
     restart: always
     container_name: crypto-riak-node
-    image: crypto/riak
-    build: docker/riak
+    image: basho/riak-kv
+    # build: docker/riak
     ports:
       - "8087:8087"   # Protobuffer port
       - "8093:8093"   # Yokodzuna port
