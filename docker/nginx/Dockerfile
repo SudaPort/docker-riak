@@ -1,4 +1,4 @@
-FROM nginx:1.11
+FROM nginx:stable-alpine-perl
 
 COPY ./hosts /etc/nginx/conf.d
 COPY entrypoint.sh /
