@@ -27,5 +27,5 @@ RUN locale-gen en_US en_US.UTF-8
 COPY ./supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY ./entrypoint.sh /
 COPY ./ssl-cert /etc/riak
-
-CMD ["chmod", "+x", "/entrypoint.sh"]
+RUN chmod u+x+r+w /entrypoint.sh
+CMD ["/entrypoint.sh"]
