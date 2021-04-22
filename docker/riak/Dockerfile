@@ -1,4 +1,4 @@
-FROM basho/riak-kv:latest
+FROM basho/riak-kv:ubuntu-2.0.7
 # Install Riak from packagecloud
 # RUN \
 #     sed -i.bak 's/main$/main universe/' /etc/apt/sources.list \
