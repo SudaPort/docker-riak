@@ -29,6 +29,8 @@ FROM basho/riak-kv:ubuntu-2.0.7
 #     && cd riak-2.2.3 \
 #     &&make rel
 #Install Riak from Docker
+RUN apt-get install software-properties-common
+RUN apt-get update
 RUN apt-add-repository ppa:openjdk-r/ppa -y && apt-get update
 RUN apt-get install -y openjdk-8-jdk
 
