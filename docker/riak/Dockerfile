@@ -4,11 +4,10 @@ RUN \
     sed -i.bak 's/main$/main universe/' /etc/apt/sources.list \
     && apt-get update -qq && apt-get install -y software-properties-common curl vim ssh dpkg \
     && apt-add-repository ppa:openjdk-r/ppa -y && apt-get update -qq \
-    && apt-get install -y openjdk-8-jdk \
+    && apt-get install -y openjdk-8-jdk && apt-get install logrotate sudo \
     && curl -fsSL "https://files.tiot.jp/riak/kv/3.0/3.0.4/ubuntu/bionic64/riak_3.0.4-yokozuna-OTP22.3_amd64.deb" > /tmp/riak_setup.deb 
     RUN dpkg --configure -a && apt-get -f install
     RUN dpkg -i /tmp/riak_setup.deb
-    RUN dpkg --configure -a && apt-get -f install
     RUN apt-get update && apt-get install -y supervisor riak \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
