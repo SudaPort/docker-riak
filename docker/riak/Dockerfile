@@ -6,7 +6,7 @@ RUN \
     && apt-add-repository ppa:openjdk-r/ppa -y && apt-get update -qq \
     && apt-get install -y openjdk-8-jdk \
     && curl -fsSL "https://files.tiot.jp/riak/kv/3.0/3.0.4/ubuntu/bionic64/riak_3.0.4-yokozuna-OTP22.3_amd64.deb" > /tmp/riak_setup.sh \
-    && chmod +x /tmp/riak_setup.sh && ./tmp/riak_setup.sh \
+    && chmod +x /tmp/riak_setup.sh && /tmp/riak_setup.sh \
     && apt-get update && apt-get install -y supervisor riak \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
