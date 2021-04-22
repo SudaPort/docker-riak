@@ -29,9 +29,9 @@ FROM basho/riak-kv:latest
 #     && cd riak-2.2.3 \
 #     &&make rel
 #Install Riak from Docker
-RUN apt-get update -qq \
-    && apt-add-repository ppa:openjdk-r/ppa -y && apt-get update -qq \
-    && apt-get install -y openjdk-8-jdk
+RUN apt-get update -qq 
+RUN apt-add-repository ppa:openjdk-r/ppa -y && apt-get update -qq 
+RUN apt-get install -y openjdk-8-jdk
 
 RUN locale-gen en_US en_US.UTF-8
 
