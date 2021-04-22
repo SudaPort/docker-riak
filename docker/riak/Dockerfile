@@ -5,10 +5,10 @@ RUN \
     && apt-get update -qq && apt-get install -y software-properties-common curl vim ssh \
     && apt-add-repository ppa:openjdk-r/ppa -y && apt-get update -qq \
     && apt-get install -y openjdk-8-jdk \
-    && curl -fsSL "https://files.tiot.jp/riak/kv/3.0/3.0.4/ubuntu/bionic64/riak_3.0.4-yokozuna-OTP22.3_amd64.deb" > /tmp/riak_setup.sh \
-    && chmod +x /tmp/riak_setup.sh 
-    RUN /tmp/riak_setup.sh \
-    && apt-get update && apt-get install -y supervisor riak \
+    && curl -fsSL "https://files.tiot.jp/riak/kv/3.0/3.0.4/ubuntu/bionic64/riak_3.0.4-yokozuna-OTP22.3_amd64.deb" > /tmp/riak_setup.deb \
+    && chmod +x /tmp/riak_setup.deb && dpkg -i /tmp/riak_setup.deb
+    
+    RUN apt-get update && apt-get install -y supervisor riak \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 #Installing Erlang
