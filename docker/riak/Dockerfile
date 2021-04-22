@@ -11,8 +11,8 @@ FROM ubuntu:18.04
 #     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 #Installing Erlang
-RUN apt-get update -qq && apt-get install build-essential autoconf libncurses5-dev openssl libssl-dev fop xsltproc unixodbc-dev git \
-    && apt-get install libwxbase2.8 libwxgtk2.8-dev libqt4-opengl-dev wget \
+RUN apt-get update -qq && apt-get install -y build-essential autoconf libncurses5-dev openssl libssl-dev fop xsltproc unixodbc-dev git \
+    && apt-get install -y libwxbase2.8 libwxgtk2.8-dev libqt4-opengl-dev wget \
     && wget http://s3.amazonaws.com/downloads.riak.com/erlang/otp_src_R16B02-basho10.tar.gz \
     && tar zxvf otp_src_R16B02-basho10.tar.gz \
     && cd OTP_R16B02_basho10 \
