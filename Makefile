@@ -34,18 +34,18 @@ purge:
 
 # Adds node to cluster
 join:
-	docker exec crypto-riak-node riak-admin cluster join riak@${ARGS}
+	docker exec crypto-riak-node riak admin cluster join riak@${ARGS}
 
 commit:
-	docker exec crypto-riak-node riak-admin cluster plan
-	docker exec crypto-riak-node riak-admin cluster commit
+	docker exec crypto-riak-node riak admin cluster plan
+	docker exec crypto-riak-node riak admin cluster commit
 
 # Removes node from cluster by name
 remove:
-	docker exec crypto-riak-node riak-admin cluster leave riak@${ARGS}
+	docker exec crypto-riak-node riak admin cluster leave riak@${ARGS}
 
 status:
-	docker exec crypto-riak-node riak-admin cluster status
+	docker exec crypto-riak-node riak admin cluster status
 
 # Add acl rule to riak
 user:
@@ -57,7 +57,7 @@ secure:
 
 # Riak security settings
 settings:
-	docker exec crypto-riak-node riak-admin security ${ARGS}
+	docker exec crypto-riak-node riak admin security ${ARGS}
 
 attach:
 	docker exec -i -t ${c} /bin/bash

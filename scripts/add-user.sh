@@ -59,5 +59,5 @@ do
     fi
 done
 
-docker exec crypto-riak-node riak-admin security add-user $LOGIN password=$PASSWORD
-docker exec crypto-riak-node riak-admin security grant $PERMISSIONS on any to $LOGIN
+docker exec crypto-riak-node riak admin security add-user $LOGIN password=$PASSWORD
+docker exec crypto-riak-node riak admin security grant $PERMISSIONS on any to $LOGIN
