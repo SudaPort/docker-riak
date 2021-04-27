@@ -23,9 +23,9 @@ if [[ ! -z "$SSL_CERTFILE" ]]; then
 fi
 
 echo "anti_entropy.concurrency_limit = 1" >> /etc/riak/riak.conf
-echo "javascript.map_pool_size = 0" >> /etc/riak/riak.conf
-echo "javascript.reduce_pool_size = 0" >> /etc/riak/riak.conf
-echo "javascript.hook_pool_size = 0" >> /etc/riak/riak.conf
+# echo "javascript.map_pool_size = 0" >> /etc/riak/riak.conf
+# echo "javascript.reduce_pool_size = 0" >> /etc/riak/riak.conf
+# echo "javascript.hook_pool_size = 0" >> /etc/riak/riak.conf
 echo "erlang.distribution.port_range.minimum = 6000" >> /etc/riak/riak.conf
 echo "erlang.distribution.port_range.maximum = 6005" >> /etc/riak/riak.conf
 
