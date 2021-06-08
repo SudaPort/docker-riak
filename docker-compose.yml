@@ -19,7 +19,7 @@ services:
       default:
         external:
           name: guroshnet
-            ipv4_address: 172.18.0.19
+            ipv4_address: 172.72.0.19
 
   nginx-reverse:
     restart: always
@@ -39,7 +39,7 @@ services:
       default:
         external:
           name: guroshnet
-            ipv4_address: 172.18.0.18
+            ipv4_address: 172.72.0.18
 
 volumes:
   storage:
