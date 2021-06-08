@@ -16,8 +16,10 @@ services:
     volumes:
       - storage:/var/lib/riak
     networks:
-        docker0:
-         - ipv4_address: 172.17.0.19
+      default:
+        external:
+          name: guroshnet
+            ipv4_address: 172.18.0.19
 
   nginx-reverse:
     restart: always
@@ -34,8 +36,10 @@ services:
     links:
       - riak
     networks:
-        docker0:
-         - ipv4_address: 172.17.0.18
+      default:
+        external:
+          name: guroshnet
+            ipv4_address: 172.18.0.18
 
 volumes:
   storage:
