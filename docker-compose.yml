@@ -17,7 +17,7 @@ services:
       - storage:/var/lib/riak
     networks:
       default:
-        external:
+        external: true
           name: guroshnet
 
   nginx-reverse:
@@ -36,7 +36,7 @@ services:
       - riak
     networks:
       default:
-        external:
+        external: true
           name: guroshnet
 
 volumes:
